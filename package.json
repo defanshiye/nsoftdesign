@@ -152,5 +152,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.0"
   }
 }
