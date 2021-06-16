@@ -1,5 +1,5 @@
 import React from 'react';
-import Button, { ButtonSize, ButtonType } from './components/Button/button'
+import Button, { ButtonSize, ButtonType } from './components/Button/button';
 
 const App: React.FC = () => {
   return (
@@ -12,6 +12,6 @@ const App: React.FC = () => {
       <Button btnType={ButtonType.Link} href='www.baidu.com' disabled>Baidu Link Disabled</Button>
     </div>
   );
-}
+};
 
 export default App;

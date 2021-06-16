@@ -43,7 +43,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     [`btn-${btnType}`]: ButtonType,
     [`btn-${size}`]: ButtonSize,
     'disabled': (btnType === ButtonType.Link) && disabled
-  })
+  });
 
   if (btnType === ButtonType.Link && href) {
     return (
@@ -64,12 +64,12 @@ const Button: React.FC<ButtonProps> = (props) => {
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
 Button.defaultProps = {
   disabled: false,
   btnType: ButtonType.Default
-}
+};
 
-export default Button
+export default Button;
