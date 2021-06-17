@@ -1,17 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export enum ButtonSize {
-  Large = 'lg',
-  Small = 'sm'
-}
-
-export enum ButtonType {
-  Primary = 'primary',
-  Default = 'default',
-  Danger = 'danger',
-  Link = 'link'
-}
+export type ButtonSize = 'lg' | 'sm'
+export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
 
 interface BaseButtonProps {
   className?: string;
@@ -40,12 +31,12 @@ const Button: React.FC<ButtonProps> = (props) => {
   } = props;
 
   const classes = classNames('ns-btn', className, {
-    [`ns-btn-${btnType}`]: ButtonType,
-    [`ns-btn-${size}`]: ButtonSize,
-    'disabled': (btnType === ButtonType.Link) && disabled
+    [`ns-btn-${btnType}`]: btnType,
+    [`ns-btn-${size}`]: size,
+    'disabled': (btnType === 'link') && disabled
   });
 
-  if (btnType === ButtonType.Link && href) {
+  if (btnType === 'link' && href) {
     return (
       <a
         className={classes}
@@ -69,7 +60,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 Button.defaultProps = {
   disabled: false,
-  btnType: ButtonType.Default
+  btnType: 'default'
 };
 
 export default Button;
